@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Azure Node' });
+  const data = {
+    title: 'Azure Node Service',
+    message: process.env.MESSAGE || 'This Is Development environment'
+  }
+  res.render('index', data);
   //res.send({request: 'success'});
 });
 
